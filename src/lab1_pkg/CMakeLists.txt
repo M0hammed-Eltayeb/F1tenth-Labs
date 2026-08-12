@@ -38,10 +38,17 @@ if(BUILD_TESTING)
 endif()
 ament_python_install_package(${PROJECT_NAME})
 
+
 install(PROGRAMS
   lab1_pkg/talker.py
   lab1_pkg/relay.py
   DESTINATION lib/${PROJECT_NAME}
+)
+
+install(DIRECTORY
+  launch
+  config
+  DESTINATION share/${PROJECT_NAME}/
 )
 
 ament_package()
